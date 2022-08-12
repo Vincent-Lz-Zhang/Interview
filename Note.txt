@@ -1,0 +1,8 @@
+Assumptions
+
+1. Sedol can be empty string in the Instrument table.
+2. Sedol is not unique in both tables, i.e., there can be more than one active Instrument with the same Sedol.
+
+Tech note
+
+SQLite doesn't seem to support index filter.

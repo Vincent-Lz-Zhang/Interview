@@ -15,7 +15,7 @@ namespace YesWeCan
         {
             try
             {
-                (await Client.GetStringAsync("http://localhost:5010/v1/marketdata/"))
+                (await Client.GetStringAsync("http://localhost:5010/api/v1/marketdata/"))
                     .ParseJson<IList<MarketData>>()
                     .Verify(
                         d => d.Count == 2,
@@ -26,7 +26,7 @@ namespace YesWeCan
                     .ToString()
                     .Write(s => s.Contains("Failed") ? ConsoleColor.Red : ConsoleColor.Green);
                 
-                (await Client.GetStringAsync("http://localhost:5010/v1/instruments/"))
+                (await Client.GetStringAsync("http://localhost:5010/api/v1/instruments/"))
                     .ParseJson<IList<Instrument>>()
                     .Verify(
                         d => d.Count == 4,
@@ -37,7 +37,7 @@ namespace YesWeCan
                     .Write(s => s.Contains("Failed") ? ConsoleColor.Red : ConsoleColor.Green);
                 
 
-                (await Client.GetStringAsync("http://localhost:5010/v1/valuations/"))
+                (await Client.GetStringAsync("http://localhost:5010/api/v1/valuations/"))
                     .ParseJson<IList<MarketValuation>>()
                     .Verify(
                         d => d.Count == 1,
