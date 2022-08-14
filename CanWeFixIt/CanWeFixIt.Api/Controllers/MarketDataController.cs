@@ -21,6 +21,7 @@ namespace CanWeFixIt.Api.Controllers
         }
 
         [HttpGet]
+        // TODO: add error response type for documentation
         public async Task<ActionResult<IEnumerable<MarketDataDto>>> GetAllActiveMarketDataWithInstrument(CancellationToken cancellationToken)
         {
             var result = await _marketDataService.ListActiveMarketDataWithInstrumentId(cancellationToken);

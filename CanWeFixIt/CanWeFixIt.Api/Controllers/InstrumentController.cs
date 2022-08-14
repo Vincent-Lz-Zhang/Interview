@@ -21,6 +21,7 @@ namespace CanWeFixIt.Api.Controllers
         }
 
         [HttpGet]
+        // TODO: add error response type for documentation
         public async Task<ActionResult<IEnumerable<InstrumentDto>>> GetAllActiveInstruments(CancellationToken cancellationToken)
         {
             // Test the error handling

@@ -21,6 +21,7 @@ namespace CanWeFixIt.Api.Controllers
         }
 
         [HttpGet]
+        // TODO: add error response type for documentation
         public async Task<ActionResult<IEnumerable<MarketValuationDto>>> GetTotalValuation(CancellationToken cancellationToken)
         {
             var result = await _marketDataService.GetMarketValuationAsync(cancellationToken);
